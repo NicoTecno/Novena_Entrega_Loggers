@@ -1,0 +1,112 @@
+[
+    {
+        "title": "Ryzen 5 5600G",
+        "description": "AMD Ryzen 5 5600G 6-Core 12-Thread Unlocked Desktop Processor with Radeon Graphics",
+        "code": "ABC123",
+        "price": 121,
+        "status": true,
+        "stock": 5,
+        "category": "CPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/61vGQNUEsGL._AC_SL1384_.jpg"
+    },
+    {
+        "title": "Ryzen 7 5800X",
+        "description": "AMD Ryzen 7 5800X 8-Core 16-Thread Unlocked Desktop Processor without Cooler",
+        "code": "BCD234",
+        "price": 399,
+        "status": true,
+        "stock": 10,
+        "category": "CPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/61DYLoyNRWL._AC_SL1384_.jpg"
+    },
+    {
+        "title": "Intel i5-11600K",
+        "description": "Intel Core i5-11600K Desktop Processor 6 Cores up to 4.9 GHz Unlocked",
+        "code": "CDE345",
+        "price": 229,
+        "status": true,
+        "stock": 21,
+        "category": "CPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/71l9KM7GhzL._AC_SL1500_.jpg"
+    },
+    {
+        "title": "Intel i9-11900K",
+        "description": "Intel Core i9-11900K Desktop Processor 8 Cores up to 5.3 GHz Unlocked",
+        "code": "DEF456",
+        "price": 539,
+        "status": true,
+        "stock": 3,
+        "category": "CPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/71diouNMRHL._AC_SX679_.jpg"
+    },
+    {
+        "title": "MSI RTX 3070",
+        "description": "MSI NVIDIA GeForce RTX 3070 8GB GDDR6 Graphics Card",
+        "code": "EFG567",
+        "price": 499,
+        "status": true,
+        "stock": 7,
+        "category": "GPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/81-oggyu7MS._AC_SL1500_.jpg"
+    },
+    {
+        "title": "EVGA RTX 3080",
+        "description": "EVGA NVIDIA GeForce RTX 3080 10GB GDDR6X Graphics Card",
+        "code": "FGH678",
+        "price": 699,
+        "status": true,
+        "stock": 15,
+        "category": "GPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/81+RpB2KZFL._AC_SL1500_.jpg"
+    },
+    {
+        "title": "Gigabyte AMD Radeon RX 6800 XT",
+        "description": "Gigabyte AMD Radeon RX 6800 XT 16GB GDDR6 Graphics Card",
+        "code": "GHI789",
+        "price": 589,
+        "status": true,
+        "stock": 24,
+        "category": "GPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/81ReRd8MrSL._AC_SL1500_.jpg"
+    },
+    {
+        "title": "ASUS AMD Radeon RX 6900 XT",
+        "description": "ASUS AMD Radeon RX 6900 XT 16GB GDDR6 Graphics Card",
+        "code": "IJK890",
+        "price": 999,
+        "status": true,
+        "stock": 22,
+        "category": "GPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/81huELTwzhL._AC_SX679_.jpg"
+    },
+    {
+        "title": "Ryzen 9 5900X",
+        "description": "AMD Ryzen 9 5900X 12-Core 24-Thread Unlocked Desktop Processor without Cooler",
+        "code": "JKL901",
+        "price": 549,
+        "status": true,
+        "stock": 31,
+        "category": "CPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/616VM20+AzL._AC_SL1384_.jpg"
+    },
+    {
+        "title": "Ryzen 9 5950X",
+        "description": "AMD Ryzen 9 5950X 16-Core 32-Thread Unlocked Desktop Processor without Cooler",
+        "code": "KLM012",
+        "price": 799,
+        "status": true,
+        "stock": 12,
+        "category": "CPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/616VM20+AzL._AC_SL1384_.jpg"
+    },
+    {
+        "title": "Intel i7-11700K",
+        "description": "Intel Core i7-11700K Desktop Processor 8 Cores up to 5.0 GHz Unlocked",
+        "code": "LMN123",
+        "price": 399,
+        "status": true,
+        "stock": 14,
+        "category": "CPU",
+        "thumbnail": "https://m.media-amazon.com/images/I/71idAEIDhvL._AC_SL1500_.jpg"
+    }
+]

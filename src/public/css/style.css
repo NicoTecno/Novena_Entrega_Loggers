@@ -1,0 +1,46 @@
+:root {
+	--gradient: linear-gradient(90deg, #323232, #101010);
+	--p-color: #5288fb;
+	--radius: 5px;
+	--shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	--shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+	background: var(--gradient);
+}
+
+
+
+.bg-light {
+	background: #ffffff;
+	box-shadow: var(--shadow);
+}
+
+.login-section {
+	margin: 30px 15px;
+	border-radius: var(--radius);
+}
+
+.navbar {
+	margin: 10px;
+	border-radius: var(--radius);
+}
+
+.form-control {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border-radius: var(--radius);
+	border: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.btn-primary {
+	background: var(--p-color);
+	border-radius: var(--radius);
+	border: 1px solid #ddd;
+}
+
+.btn-outline-danger {
+	border-radius: var(--radius);
+}

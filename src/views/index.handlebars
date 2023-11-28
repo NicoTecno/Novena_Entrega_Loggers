@@ -1,0 +1,33 @@
+<section class='container m-5'>
+	<div class='row bg-light login-section'>
+		<div class='col-4'>
+			<img src='{{user.img}}' alt='logo' class='img-fluid' />
+		</div>
+		<div class='col-8' style='padding: 50px 20px;'>
+			<h1>Hola, {{user.first_name}} {{user.last_name}}</h1>
+
+			<p>No te olvides de tus datos!!</p>
+
+			<ul>
+				{{#if user.age}}
+				<li><b>Nombre y apellido: </b>{{user.first_name}} {{user.last_name}}</li>
+				<li><b>Edad: </b>{{user.age}}</li>
+				<li><b>Correo: </b>{{user.email}}</li>
+				<li><b>Rol: </b>{{user.rol}}</li>
+
+				{{else}}
+					{{#if user.rol}}
+					<li><b>Nombre y apellido: </b>{{user.first_name}} {{user.last_name}}</li>
+					<li><b>Correo: </b>{{user.email}}</li>
+					<li><b>Rol: </b>{{user.rol}}</li>
+
+				{{else}}
+				<li><b>Rol: </b>admin</li>
+				<a href="/realtimeproducts"><button class="mt-4 btn btn-primary">Agregar Productos</button></a>
+
+					{{/if}}
+				{{/if}}
+			</ul>
+		</div>
+	</div>
+</section>

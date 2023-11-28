@@ -1,0 +1,124 @@
+body {
+    background-color: rgb(187, 219, 235);
+}
+
+input,
+textarea,
+
+
+
+#submitInput {
+    padding: 10px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all .3s;
+    background-color: #0d6efd;
+}
+
+#deleteInput {
+    margin-top: 10px;
+    background-color: #ff3232;
+    padding: 16px;
+}
+
+
+
+.list-group-item {
+    transition: all .2s;
+}
+
+.list-group-item:hover {
+    transform: scale(1.03);
+    border: 1px solid #373737;
+    background-color: #f5f5f5;
+}
+
+.custom-border {
+    border-color: #757575;
+    color: #757575;
+}
+
+.custom-border:hover {
+    color: #4b4b4b;
+}
+
+
+input {
+    margin-bottom: 15px;
+}
+
+label {
+    margin: 10px;
+}
+
+
+
+/* Agrega estilos para el contenedor de la imagen */
+
+.image-product {
+    margin: 20px;
+    width: calc(100% - 40px); /* ajuste el ancho restando los márgenes */
+    height: 260px; /* ajuste la altura restando los márgenes */
+    background-size: cover;
+    background-position: center;
+
+}
+
+.card.mb-3 {
+    transition: all 0.3s ease;
+}
+
+.card.mb-3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.flex-row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.flex-row>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row>div .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Botones para agregar al carrito en cantidad */
+.counter {
+    font-size: 1.4em;
+    margin: 20px;
+}
+
+.btn-counter {
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    width: 20px;
+    height: 23px;
+    border-radius: 50%;
+    font-size: 0.8em;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.btn-counter:hover {
+    background-color: #0056b3;
+}
+
+.counterDisplay {
+    margin: 0 20px;
+}

@@ -1,0 +1,78 @@
+<section id="products" class="container">
+
+    <h1 id="title">Carrito</h1>
+
+    <div class="mt-auto d-flex justify-content-center align-items-center shop-btn m-5">
+        <a href="http://localhost:8080/carts/purchase/{{user._id}}">
+            <button type="button" class="purchaseBtn btn btn-primary shop-btn" style="width: 350px;">Comprar
+                Ahora</button>
+        </a>
+    </div>
+
+    {{#each products}}
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+
+                    <h5 class="card-title">{{this.productId.title}}</h5>
+                    <p class="card-text">{{this.productId.description}}</p>
+                    <p class="card-text">${{this.productId.price}}</p>
+                    <p class="card-text">ID: {{this.productId._id}}</p>
+                    <p class="card-text">Categoria: {{this.productId.category}}</p>
+                    <p class="card-text">Stock: {{this.productId.stock}}</p>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="http://localhost:8080/api/products/{{this.productId._id}}"><button
+                                        type="button" class="btn btn-primary">Ver más</button></a>
+                            </td>
+
+                            <td>
+
+                                <button class="btn btn-dark delete-button" data-id="{{this.productId._id}}"
+                                    data-user-id="{{../user._id}}">Remove from cart</button>
+
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+</section>
+
+<script>
+    //Ajax para eliminar producto
+    document.querySelectorAll('.delete-button').forEach(button => {
+        button.addEventListener('click', event => {
+            event.preventDefault();
+
+            const productId = button.getAttribute('data-id');
+            const userId = button.getAttribute('data-user-id');
+
+            fetch('/api/carts/' + userId + '/' + productId, {
+                method: 'POST',
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Actualiza la página sin recargarla
+                    // Eliminar producto del DOM
+                    button.closest('.card').remove();
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        });
+    });
+</script>
+
+
+
+<script src="/js/cart.js"></script>

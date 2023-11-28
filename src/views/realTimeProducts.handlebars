@@ -1,0 +1,44 @@
+<section id="products" class="container">
+
+    <div id="title">
+        <h1>Productos en tiempo real</h1>
+        
+    </div>
+    
+        <h2>Agregue un Producto:</h2>
+        
+        <form id="form" action="/realTimeProducts" method="post">
+            <input class="form-control" id="titleInput" name="title" type="text" placeholder="Título" >
+            <input class="form-control" id="priceInput" name="price" type="number" placeholder="Precio">
+            <input class="form-control" id="stockInput" name="stock" type="number" placeholder="Stock">
+            {{!-- <input class="form-control" id="codeInput" type="text" name="code" placeholder="Código"> --}}
+            <input class="form-control" id="categoryInput" type="text" name="category" placeholder="Categoria">
+            <input class="form-control" id="thumbnailInput" type="text" name="thumbnail" placeholder="Link Thumbnail">
+            <textarea class="form-control" id="descripInput" name="descrip" placeholder="Descripcion" style="height: 100px"></textarea>
+            <div>
+                <label for="statusInput">Status:</label>
+                <input type="checkbox" name="status" id="statusInput">
+            </div>
+            <div id="submitInput-container" >
+                <input class="text-light" id="submitInput" type="submit" value="Enviar">
+            </div>
+        </form>
+
+
+        <h2>Eliminar producto: </h2>
+
+        <form action="/realTimeProducts" method="post" id="deleteForm">
+            <input class="form-control" type="text" placeholder="ID" id="idInput">
+
+            <div id="deleteInput-container">
+                <input class="text-light" type="submit" id="deleteInput" value="Eliminar">
+            </div>
+        </form>
+
+
+    <div id="products-container">
+
+    </div>
+</section>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/index.js"></script>

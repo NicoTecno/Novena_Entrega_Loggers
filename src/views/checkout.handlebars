@@ -1,0 +1,68 @@
+<section id="order-confirmation" class="container mt-5">
+    <h1 class="text-center">Purchase Detail</h1>
+    <hr>
+    <div id="order-details">
+        {{#each products}}
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <h5>{{this.productId.title}}</h5>
+                <p>{{this.productId.description}}</p>
+            </div>
+            <div class="col-md-2 text-end">
+                <p>Cantidad: {{this.quantity}}</p>
+            </div>
+            <div class="col-md-2 text-end">
+                <p>Precio: ${{this.productId.price}}</p>
+            </div>
+            <div class="col-md-2 text-end">
+                <p>Subtotal: ${{this.subtotal}}</p>
+            </div>
+        </div>
+        {{/each}}
+        <hr>
+        <div class="row">
+            <div class="col-md-9">
+                <h4>Total:</h4>
+            </div>
+            <div class="col-md-3 text-end">
+                <h4>${{total}} USD</h4>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="col d-flex justify-content-center">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+
+
+            <form action="/api/sending/mail" method="post">
+
+                <input type="hidden" name="userEmail" value="{{user.email}}">
+
+                {{#each products}}
+                <input type="hidden" name="products[{{@index}}][productId][id]" value="{{this.productId._id}}">
+                <input type="hidden" name="products[{{@index}}][productId][title]" value="{{this.productId.title}}">
+                <input type="hidden" name="products[{{@index}}][productId][description]" value="{{this.productId.description}}">
+                <input type="hidden" name="products[{{@index}}][quantity]" value="{{this.quantity}}">
+                <input type="hidden" name="products[{{@index}}][productId][price]" value="{{this.productId.price}}">
+                <input type="hidden" name="products[{{@index}}][subtotal]" value="{{this.subtotal}}">
+                {{/each}}
+
+
+                <input type="hidden" name="total" value="{{total}}">
+
+                <button type="submit" class="btn btn-primary btn-lg mt-5" style="width: 350px;">Confirm
+                    Purchase</button>
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+</section>

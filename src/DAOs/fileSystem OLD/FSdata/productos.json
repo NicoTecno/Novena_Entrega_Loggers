@@ -1,0 +1,124 @@
+[
+    {
+      "id": 1,
+      "title": "Producto de prueba 1",
+      "description": "Descripcion del producto de prueba 1",
+      "code": "5615641",
+      "price": 51,
+      "status": true,
+      "stock": 20,
+      "category": "prueba",
+      "thumbnails": []
+    },
+    {
+      "id": 2,
+      "title": "Producto de prueba 2",
+      "description": "Descripcion del producto de prueba 2",
+      "code": "4563",
+      "price": 44,
+      "status": true,
+      "stock": 456,
+      "category": "prueba",
+      "thumbnails": []
+    },
+    {
+      "id": 3,
+      "title": "Producto de prueba 3",
+      "description": "Descripcion del producto de prueba 3",
+      "code": "5615453641",
+      "price": 13,
+      "status": true,
+      "stock": 456,
+      "category": "prueba",
+      "thumbnails": []
+    },
+    {
+      "id": 4,
+      "title": "Producto de prueba 4",
+      "description": "Descripcion del producto de prueba 4",
+      "code": "45345",
+      "price": 1,
+      "status": true,
+      "stock": 45,
+      "category": "prueba",
+      "thumbnails": []
+    },
+    {
+      "id": 5,
+      "title": "Producto de prueba 5",
+      "description": "Descripcion del producto de prueba 5",
+      "code": "13",
+      "price": 12,
+      "status": true,
+      "stock": 77,
+      "category": "prueba",
+      "thumbnails": []
+    },
+    {
+      "id": 6,
+      "title": "Producto de prueba 6",
+      "description": "Descripcion del producto de prueba 6",
+      "code": "dftryh",
+      "price": 43,
+      "status": true,
+      "stock": 13,
+      "category": "prueba",
+      "thumbnails": []
+    },
+    {
+      "id": 7,
+      "title": "Producto de prueba 7",
+      "description": "Descripcion del producto de prueba 7",
+      "code": "xty",
+      "price": 78,
+      "status": true,
+      "stock": 46,
+      "category": "prueba",
+      "thumbnails": []
+    },
+    {
+      "id": 8,
+      "title": "Producto de prueba 8",
+      "description": "Descripcion del producto de prueba 8",
+      "code": "xjgf",
+      "price": 46,
+      "status": true,
+      "stock": 12,
+      "category": "prueba",
+      "thumbnails": []
+    },
+    {
+      "id": 9,
+      "title": "Producto de prueba 9",
+      "description": "Descripcion del producto de prueba 9",
+      "code": "xfgjxfg",
+      "price": 100,
+      "status": true,
+      "stock": 46,
+      "category": "prueba",
+      "thumbnails": []
+    },
+    {
+      "id": 10,
+      "title": "Producto de prueba 10",
+      "description": "Descripcion del producto de prueba 10",
+      "code": "fgeztgf",
+      "price": 78,
+      "status": true,
+      "stock": 12,
+      "category": "prueba",
+      "thumbnails": []
+    },
+    {
+      "id": 11,
+      "title": "Producto de prueba 11",
+      "description": "Descripcion del producto de prueba 11",
+      "code": "rty566t4y",
+      "price": "23",
+      "status": true,
+      "stock": "20",
+      "category": "prueba",
+      "thumbnails": []
+    }
+  ]
+  

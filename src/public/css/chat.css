@@ -1,0 +1,39 @@
+body {
+  text-align: center;
+}
+
+
+
+textarea {
+  margin-top: 50px;
+}
+
+article{
+  padding: 20px;
+  background-color: rgb(164, 164, 164);
+}
+
+.msg {
+  margin: 20px;
+  padding: 10px;
+  background-color: rgb(219, 219, 219);
+}
+
+div {
+  font-size: 20px;
+}
+
+input {
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+th, td {
+  padding-right: 30px;
+  font-size: 20px;
+}
+
+button {
+  font-size: 20px;
+}

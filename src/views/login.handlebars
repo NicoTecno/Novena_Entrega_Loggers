@@ -1,0 +1,36 @@
+<section class='container my-5'>
+	<div class='row bg-light shadow login-section rounded'>
+		<div class='col-lg-2 d-none d-lg-block'></div>
+
+		<div class='col-lg-8 p-5' style="box-shadow: #333;">
+			<h1 class='mb-4'>Ingresar</h1>
+			<form action='/api/users/auth' method='post'>
+				<div class='row'>
+					<div class='col-12 mb-3'>
+						<input type='email' class='form-control form-control-lg' placeholder='Correo Electronico'
+							aria-label='Correo' name='email' />
+					</div>
+					<div class='col-12 mb-4'>
+						<input type='password' class='form-control form-control-lg' placeholder='Contraseña'
+							aria-label='Contraseña' name='password' />
+					</div>
+
+					<button type='submit' class='btn btn-primary btn-lg btn-block'>Plase Sign In</button>
+
+				</div>
+			</form>
+
+			<form action='/api/sessions/github' method='get'>
+				<div class='row'>
+					<button type='submit' class='btn btn-secondary col-12 btn-block'
+						style='background: #333; color: #fff; margin-top: 10px; font-size: 20px;'>
+						Ingresar con GitHub
+					</button>
+				</div>
+			</form>
+
+		</div>
+		<div class='col-lg-2 d-none d-lg-block'></div>
+
+	</div>
+</section>

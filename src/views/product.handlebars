@@ -1,0 +1,175 @@
+<section id="product" class="container">
+    <div class="container mt-50">
+        <h1 id="title">Producto {{product.title}}</h1>
+        <div id="products-container">
+            <div class="card mb-3">
+                <div class="row g-0">
+
+                    <!-- Primera columna para la imagen -->
+                    <div class="col-md-8">
+                        <div class="image-container">
+
+                            {{#if product.thumbnail}}
+                            <div class="image-product img-fluid img"
+                                style="background-image: url({{product.thumbnail}})">
+                            </div>
+                            {{else}}
+                            <div class="image-product img-fluid img"
+                                style="background-image: url('https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg')">
+                            </div>
+                            {{/if}}
+
+                        </div>
+
+
+                    </div>
+
+                    <!-- Segunda columna para las especificaciones -->
+                    <div class="col-md-4 d-flex flex-column">
+                        <div class="card-body">
+                            <h2 class="card-title">{{product.title}}</h2>
+                            <hr>
+                            <h3 class="card-text">${{product.price}} USD</h3>
+                            <br>
+                            <p class="card-text">{{product.description}}</p>
+                            <p class="card-text pid" data-pid="{{product._id}}">ID: {{product._id}}</p>
+                            <p class="card-text stock" data-stock="{{product.stock}}">Stock: {{product.stock}}</p>
+                            <p class="card-text">Categoria: {{product.category}}</p>
+
+
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="col mb-3 d-flex justify-content-center">
+                                <div class="counter d-flex justify-content-center align-items-center">
+                                    <button class="decrementButton btn btn-counter">-</button>
+                                    <p class="counterDisplay mx-3" data-counter="0">0</p>
+                                    <button class="incrementButton btn btn-counter">+</button>
+                                </div>
+                            </div>
+
+
+                            <div class="mt-auto d-flex justify-content-center align-items-center shop-btn">
+                                <a href="http://localhost:8080/carts/purchase/{{user._id}}">
+                                    <button type="button" class="purchaseBtn btn btn-primary shop-btn"
+                                        style="width: 350px;">Comprar
+                                        Ahora</button>
+                                </a>
+                            </div>
+
+
+                            <div class="col d-flex justify-content-center">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <form action="/api/carts/{{user._id}}/cart" method="post">
+                                        <input type="hidden" name="productId" value="{{product._id}}">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <button type="submit" name="addcart" class="btn btn-secondary"
+                                            onclick="addProductAlert()" style="width: 350px;">Agregar al
+                                            Carrito</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/products.js"></script>
+
+<script>
+
+    document.querySelectorAll('.counter').forEach(function (counterContainer) {
+        let counterDisplay = counterContainer.querySelector('.counterDisplay');
+        let incrementButton = counterContainer.querySelector('.incrementButton');
+        let decrementButton = counterContainer.querySelector('.decrementButton');
+        let addToCartButton = counterContainer.closest('.col-md-4').querySelector('form button[type=submit]');
+
+
+        let purchaseLink = counterContainer.closest('.col-md-4').querySelector('.shop-btn a');
+
+        let purchaseBtn = counterContainer.closest('.col-md-4').querySelector('.purchaseBtn');
+        let addToCartBtn = counterContainer.closest('.col-md-4').querySelector('form button[type=submit]');
+
+        let originalHref = purchaseLink.getAttribute('href');
+        purchaseLink.setAttribute('href', '#');
+
+
+        purchaseBtn.disabled = true;
+        addToCartBtn.disabled = true;
+
+        decrementButton.disabled = true;
+
+        let counter = parseInt(counterDisplay.getAttribute('data-counter'));
+        let stockElement = counterContainer.closest('.col-md-4').querySelector('.stock');
+        let limit = parseInt(stockElement.getAttribute('data-stock'));
+
+        let originalLimit = limit;  //fix logic error :D
+
+        incrementButton.addEventListener('click', function () {
+            if (counter < originalLimit) {
+                counter++;
+                limit--;
+
+                if (counter == originalLimit) {
+                    incrementButton.disabled = true;
+
+                }
+                if (counter > 0) {
+                    decrementButton.disabled = false;
+                    purchaseBtn.disabled = false;
+                    addToCartBtn.disabled = false;
+                    purchaseLink.setAttribute('href', originalHref);
+
+                }
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'No hay mas stock! ' + originalLimit,
+                })
+            }
+            counterDisplay.textContent = counter;
+            counterDisplay.setAttribute('data-counter', counter);
+        });
+
+        decrementButton.addEventListener('click', function () {
+            if (counter > 0) {
+                counter--;
+                limit++;
+
+                if (incrementButton.disabled == true) { // If the incrementButton is disabled
+                    incrementButton.disabled = false; // enable the button
+                }
+                if (counter == 0) {
+                    decrementButton.disabled = true; // disable the decrement button
+                    purchaseBtn.disabled = true;
+                    addToCartBtn.disabled = true;
+                    purchaseLink.setAttribute('href', '#');
+
+                }
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'El contador ya está en su límite mínimo de stock 1',
+                })
+            }
+            counterDisplay.textContent = counter;
+            counterDisplay.setAttribute('data-counter', counter);
+        });
+
+        addToCartButton.addEventListener('click', function () {
+
+            let quantityInput = counterContainer.closest('.col-md-4').querySelector('form input[name=quantity]');
+            quantityInput.value = counter;
+
+        });
+
+    });
+
+
+</script>
